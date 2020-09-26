@@ -1,4 +1,4 @@
-dataset_type = 'Bdd100kDataset'
+dataset_type = 'CocoDataset'
 data_root = '/shared/xudongliu/bdd100k'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True) #TODO need to be verify || default in xinw's code 
