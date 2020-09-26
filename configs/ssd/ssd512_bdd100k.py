@@ -16,6 +16,7 @@ model = dict(
             ratios=[[2], [2, 3], [2, 3], [2, 3], [2, 3], [2], [2]])))
 # dataset settings
 dataset_type = 'CocoDataset'
+classes = ('person', 'rider', 'car', 'bus', 'truck', 'bike', 'motor', 'traffic light', 'traffic sign', 'train')
 data_root = '/shared/xudongliu/bdd100k/'
 img_norm_cfg = dict(mean=[123.675, 116.28, 103.53], std=[1, 1, 1], to_rgb=True)
 train_pipeline = [
