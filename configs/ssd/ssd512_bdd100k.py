@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/ssd300.py', '../_base_/datasets/bdd100k_detection.py',
-    '../_base_/schedules/schedule_2x.py', '../_base_/default_runtime.py'
+    '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py' #TODO change learning schedule
 ]
 input_size = 512
 model = dict(
@@ -62,7 +62,7 @@ data = dict(
     train=dict(
         _delete_=True,
         type='RepeatDataset',
-        times=5,
+        times=1, # TODO change repeat times
         dataset=dict(
             type=dataset_type,
             ann_file=data_root + 'labels/bdd100k_labels_images_det_coco_train.json',
