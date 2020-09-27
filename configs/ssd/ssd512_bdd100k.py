@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/ssd300.py', '../_base_/datasets/bdd100k_detection.py',
-    '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py' #TODO change learning schedule
+    '../_base_/schedules/schedule_2x.py', '../_base_/default_runtime.py' #TODO change learning schedule
 ]
 input_size = 512
 model = dict(
