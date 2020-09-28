@@ -50,7 +50,7 @@ test_cfg = dict(
     nms=dict(type='nms', iou_thr=0.45),
     max_per_img=100)
 # dataset settings
-dataset_type = 'CocoDataset'
+dataset_type = 'Bdd100kDataset'
 classes = ('person', 'rider', 'car', 'bus', 'truck', 'bike', 'motor', 'traffic light', 'traffic sign', 'train')
 data_root = '/shared/xudongliu/bdd100k/'
 img_norm_cfg = dict(mean=[0, 0, 0], std=[255., 255., 255.], to_rgb=True)
