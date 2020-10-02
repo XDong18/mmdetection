@@ -1,4 +1,4 @@
-dataset_type = 'CocoDataset'
+dataset_type = 'Bdd100kDataset'
 classes = ('person', 'rider', 'car', 'bus', 'truck', 'bike', 'motor', 'traffic light', 'traffic sign', 'train')
 data_root = '/shared/xudongliu/bdd100k/'
 img_norm_cfg = dict(
