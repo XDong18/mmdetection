@@ -1,2 +1,2 @@
-export CUDA_VISIBLE_DEVICES=4,5,6,7
-./tools/dist_train.sh configs/ssd/ssd512_bdd100k_10x.py 4 --work-dir out/ssd_512_10x
+export CUDA_VISIBLE_DEVICES=0,1,2,3
+./tools/dist_train.sh configs/cascade_rcnn/cascade_rcnn_r50_fpn_1x_bdd100k.py 4 --work-dir out/cascade_rcnn_r50_fpn_1x
