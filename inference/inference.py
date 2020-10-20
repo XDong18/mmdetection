@@ -14,7 +14,8 @@ val_dir = '/shared/xudongliu/bdd100k/100k/val'
 img_list = os.listdir(val_dir)
 
 out_dir = 'infer_img/val/cascade_rcnn_r50_fpn_1x' # TODO change out dir
-os.makedirs(out_dir)
+if not os.path.exists(out_dir):
+    os.makedirs(out_dir)
 # img = 'test.jpg'  # or img = mmcv.imread(img), which will only load it once
 
 for img in tqdm(img_list):
