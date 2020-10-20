@@ -8,8 +8,9 @@ with open (out_fn, 'w') as f:
     f.write('<body>\n')
     f.write('<h1>this is a line.</h1>\n')
 
-    for img in img_list:
-        new_line = "<img src='" + os.path.join(img_dir, img) + "'>\n"
-        f.write(new_line)
+    # for img in img_list:
+    #     new_line = "<img src='" + os.path.join(img_dir, img) + "'>\n"
+    #     f.write(new_line)
+    f.write("<img src='" + "test.jpg" + "'>\n")
     f.write('</body>\n')
     f.write('</html>\n')
