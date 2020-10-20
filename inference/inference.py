@@ -3,9 +3,9 @@ import mmcv
 import os
 from tqdm import tqdm
 
-model_name = 'cascade_x101_64x4d_fpn_1x'
-config_file = 'configs/cascade_rcnn/cascade_rcnn_x101_64x4d_fpn_1x_bdd100k.py'
-checkpoint_file = 'out/cascade_x101_64x4d_fpn_1x/cascade_x101_64x4d_fpn_1x-d0f391c7.pth'
+model_name = 'faster_rcnn_r101_fpn_dconv_c3-c5_1x'
+config_file = 'configs/dcn/faster_rcnn_r101_fpn_dconv_c3-c5_1x_bdd100k.py'
+checkpoint_file = 'out/faster_rcnn_r101_fpn_dconv_c3-c5_1x/latest.pth'
 
 # build the model from a config file and a checkpoint file
 model = init_detector(config_file, checkpoint_file, device='cuda:7') # TODO
