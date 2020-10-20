@@ -11,7 +11,7 @@ model = init_detector(config_file, checkpoint_file, device='cuda:4') # TODO
 
 # test a single image and show the results
 val_dir = '/shared/xudongliu/bdd100k/100k/val'
-img_list = os.listdir(val_dir)
+img_list = os.listdir(val_dir)[:1000]
 
 out_dir = 'infer_img/val/cascade_rcnn_r50_fpn_1x' # TODO change out dir
 if not os.path.exists(out_dir):
