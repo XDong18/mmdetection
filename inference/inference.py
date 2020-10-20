@@ -3,9 +3,9 @@ import mmcv
 import os
 from tqdm import tqdm
 
-model_name = 'fcos_r101_caffe_fpn_gn-head_4x4_1x'
-config_file = 'configs/fcos/fcos_r101_caffe_fpn_gn-head_4x4_1x_bdd100k.py'
-checkpoint_file = 'out/fcos_r101_caffe_fpn_gn-head_4x4_1x/fcos_r101_caffe_fpn_gn-head_4x4_1x-64cf2e57.pth'
+model_name = 'yolov3_608_273e'
+config_file = 'configs/yolo/yolov3_d53_mstrain-608_273e_bdd100k.py'
+checkpoint_file = 'out/yolov3_608_273e/yolov3_608_273e-8c2596a1.pth'
 
 # build the model from a config file and a checkpoint file
 model = init_detector(config_file, checkpoint_file, device='cuda:7') # TODO
