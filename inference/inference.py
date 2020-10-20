@@ -3,9 +3,9 @@ import mmcv
 import os
 from tqdm import tqdm
 
-model_name = 'yolov3_608_273e'
-config_file = 'configs/yolo/yolov3_d53_mstrain-608_273e_bdd100k.py'
-checkpoint_file = 'out/yolov3_608_273e/yolov3_608_273e-8c2596a1.pth'
+model_name = 'cascade_rcnn_x101_32x4d_fpn_1x'
+config_file = 'configs/cascade_rcnn/cascade_rcnn_x101_32x4d_fpn_1x_bdd100k.py'
+checkpoint_file = 'out/cascade_rcnn_x101_32x4d_fpn_1x/cascade_rcnn_x101_32x4d_fpn_1x-46de620b.pth'
 
 # build the model from a config file and a checkpoint file
 model = init_detector(config_file, checkpoint_file, device='cuda:7') # TODO
