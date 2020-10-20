@@ -1,6 +1,6 @@
 import os
 
-img_dir = 'infer_img/val/cascade_rcnn_r50_fpn_1x'
+img_dir = 'val/cascade_rcnn_r50_fpn_1x'
 img_list = os.listdir(img_dir)
 out_fn = 'cascade_rcnn_r50_fpn_1x.html'
 with open (out_fn, 'w') as f:
