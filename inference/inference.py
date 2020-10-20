@@ -1,7 +1,7 @@
 from mmdet.apis import init_detector, inference_detector
 import mmcv
 import os
-import tqdm
+from tqdm import tqdm
 
 config_file = 'configs/cascade_rcnn/cascade_rcnn_r50_fpn_1x_bdd100k.py'
 checkpoint_file = 'out/cascade_rcnn_r50_fpn_1x/cascade_rcnn_r50_fpn_1x-b915cc22.pth'
