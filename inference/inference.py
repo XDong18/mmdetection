@@ -22,4 +22,4 @@ for img in tqdm(img_list):
     img_path = os.path.join(val_dir, img)
     result = inference_detector(model, img_path)
     out_path = os.path.join(out_dir, img)
-    model.show_result(img, result, out_file=out_path)
+    model.show_result(img_path, result, out_file=out_path)
