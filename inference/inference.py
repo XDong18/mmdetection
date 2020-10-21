@@ -3,16 +3,16 @@ import mmcv
 import os
 from tqdm import tqdm
 
-model_name = 'fcos_center-normbbox-centeronreg-giou_r101_caffe_fpn_gn-head_dcn_4x4_1x'
-config_file = 'configs/fcos/fcos_center-normbbox-centeronreg-giou_r101_caffe_fpn_gn-head_dcn_4x4_1x_bdd100k.py'
-checkpoint_file = 'out/fcos_center-normbbox-centeronreg-giou_r101_caffe_fpn_gn-head_dcn_4x4_1x/fcos_center-normbbox-centeronreg-giou_r101_caffe_fpn_gn-head_dcn_4x4_1x-9167d889.pth'
+model_name = 'cascade_rcnn_r101_fpn_1x'
+config_file = 'configs/cascade_rcnn/cascade_rcnn_r101_fpn_1x_bdd100k.py'
+checkpoint_file = 'out/cascade_rcnn_r101_fpn_1x/cascade_rcnn_r101_fpn_1x-8f6ef242.pth'
 
 # build the model from a config file and a checkpoint file
 model = init_detector(config_file, checkpoint_file, device='cuda:7') # TODO
 
 # test a single image and show the results
 val_dir = '/shared/xudongliu/bdd100k/100k/val'
-img_list = os.listdir(val_dir)[:1000]
+img_list = sorted(os.listdir(val_dir))[:1000]
 
 out_dir = 'infer_img/val/' + model_name # TODO change out dir
 if not os.path.exists(out_dir):
@@ -27,7 +27,7 @@ for img in tqdm(img_list):
 
 # make html file
 img_dir = out_dir
-img_list = os.listdir(img_dir)
+img_list = sorted(os.listdir(img_dir))
 out_fn = 'infer_img/' + model_name + '.html'
 with open (out_fn, 'w') as f:
     f.write('<html>\n')
