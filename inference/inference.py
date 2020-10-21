@@ -3,9 +3,9 @@ import mmcv
 import os
 from tqdm import tqdm
 
-model_name = 'fcos_center-normbbox-centeronreg-giou_r50_caffe_fpn_gn-head_dcn_4x4_1x'
-config_file = 'configs/fcos/fcos_center-normbbox-centeronreg-giou_r50_caffe_fpn_gn-head_dcn_4x4_1x_bdd100k.py'
-checkpoint_file = 'out/fcos_center-normbbox-centeronreg-giou_r50_caffe_fpn_gn-head_dcn_4x4_1x/fcos_center-normbbox-centeronreg-giou_r50_caffe_fpn_gn-head_dcn_4x4_1x-99d59f90.pth'
+model_name = 'fcos_center-normbbox-centeronreg-giou_r101_caffe_fpn_gn-head_dcn_4x4_1x'
+config_file = 'configs/fcos/fcos_center-normbbox-centeronreg-giou_r101_caffe_fpn_gn-head_dcn_4x4_1x_bdd100k.py'
+checkpoint_file = 'out/fcos_center-normbbox-centeronreg-giou_r101_caffe_fpn_gn-head_dcn_4x4_1x/fcos_center-normbbox-centeronreg-giou_r101_caffe_fpn_gn-head_dcn_4x4_1x-9167d889.pth'
 
 # build the model from a config file and a checkpoint file
 model = init_detector(config_file, checkpoint_file, device='cuda:7') # TODO
