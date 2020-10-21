@@ -3,9 +3,9 @@ import mmcv
 import os
 from tqdm import tqdm
 
-model_name = 'cascade_rcnn_r101_fpn_1x'
-config_file = 'configs/cascade_rcnn/cascade_rcnn_r101_fpn_1x_bdd100k.py'
-checkpoint_file = 'out/cascade_rcnn_r101_fpn_1x/cascade_rcnn_r101_fpn_1x-8f6ef242.pth'
+model_name = 'cascade_rcnn_r50_fpn_1x'
+config_file = 'configs/cascade_rcnn/cascade_rcnn_r50_fpn_1x_bdd100k.py'
+checkpoint_file = 'out/cascade_rcnn_r50_fpn_1x/cascade_rcnn_r50_fpn_1x-b915cc22.pth'
 
 # build the model from a config file and a checkpoint file
 model = init_detector(config_file, checkpoint_file, device='cuda:7') # TODO
@@ -27,7 +27,7 @@ for img in tqdm(img_list):
 
 # make html file
 img_dir = out_dir
-img_list = sorted(os.listdir(img_dir))
+img_list = sorted(os.listdir(img_dir))[:1000]
 out_fn = 'infer_img/' + model_name + '.html'
 with open (out_fn, 'w') as f:
     f.write('<html>\n')
