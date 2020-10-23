@@ -362,7 +362,7 @@ class Bdd100kDataset(CustomDataset):
                  metric='bbox',
                  logger=None,
                  jsonfile_prefix=None,
-                 classwise=False,
+                 classwise=True,  # calss-wise evaluation
                  proposal_nums=(100, 300, 1000),
                  iou_thrs=None,
                  metric_items=None):
