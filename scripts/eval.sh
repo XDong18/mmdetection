@@ -1,3 +1,3 @@
-export CUDA_VISIBLE_DEVICES=0,1,2
+export CUDA_VISIBLE_DEVICES=4,9
 
-./tools/dist_test.sh configs/yolo/yolov3_d53_mstrain-608_273e_bdd100k.py out/yolov3_608_273e/latest.pth 3} --eval bbox --eval-options "classwise=True"
+./tools/dist_test.sh configs/ssd/ssd512_bdd100k_10x.py out/ssd_512_10x/ssd_512_10x-91845fef.pth 2 --eval bbox --eval-options "classwise=True"
