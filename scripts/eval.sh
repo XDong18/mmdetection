@@ -1,3 +1,3 @@
 export CUDA_VISIBLE_DEVICES=4,9
 
-PORT=29502 ./tools/dist_test.sh configs/cascade_rcnn/cascade_rcnn_x101_64x4d_fpn_1x_bdd100k.py out/cascade_x101_64x4d_fpn_1x/cascade_x101_64x4d_fpn_1x-d0f391c7.pth 2 --eval bbox --eval-options "classwise=True"
+PORT=29502 ./tools/dist_test.sh configs/dcn/faster_rcnn_r101_fpn_dconv_c3-c5_1x_bdd100k.py out/faster_rcnn_r101_fpn_dconv_c3-c5_1x/latest.pth 2 --eval bbox --eval-options "classwise=True"
