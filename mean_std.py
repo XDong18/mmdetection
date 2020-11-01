@@ -2,7 +2,7 @@ import os
 from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.misc import imread
+from matplotlib.pyplot import imread
  
 filepath = '/shared/xudongliu/bdd100k/100k/train/'  # 数据集目录
 pathDir = os.listdir(filepath)
