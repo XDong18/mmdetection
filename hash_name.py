@@ -13,7 +13,7 @@ def get_parse():
 if __name__ == "__main__":
     args = get_parse()
     sha256 = hashlib.sha256()
-    with open(args.model_path) as u:
+    with open(args.model_path, 'rb') as u:
         while True:
             buffer = u.read(8192)
             if len(buffer) == 0:
@@ -25,6 +25,6 @@ if __name__ == "__main__":
         + '-' + digest + '.pth'
 
     with open(out_name, 'w') as f:
-        with open(args.model_path) as u:
+        with open(args.model_path, 'rb') as u:
             model = u.read()
         f.write(model)
