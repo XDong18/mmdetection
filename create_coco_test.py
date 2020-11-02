@@ -9,14 +9,12 @@ with open(val_json) as f:
 
 file_list = sorted(os.listdir(test_dir))
 json_data = {}
-json_data['info'] = {}
 json_data['images'] = []
-json_data['licenses'] = val_data['licenses']
 json_data['categories'] = val_data['categories']
 
 for i, fn in enumerate(file_list):
     img_info = {}
-    img_info['id'] = i
+    img_info['id'] = i + 1
     img_info['width'] = 1280
     img_info['height'] = 720
     img_info['file_name'] = fn
