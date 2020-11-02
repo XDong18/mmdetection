@@ -206,10 +206,11 @@ def main():
             for key in ['interval', 'tmpdir', 'start', 'gpu_collect']:
                 eval_kwargs.pop(key, None)
             eval_kwargs.update(dict(metric=args.eval, **kwargs))
-            print(dataset.evaluate(outputs, **eval_kwargs))
+            eval_results = dataset.evaluate(outputs, **eval_kwargs)
+            print(eval_results)
             # TODO save result json
             with open(args.result_json, 'w') as u:
-                json.dump(dataset.evaluate(outputs, **eval_kwargs), u)
+                json.dump(eval_results, u)
 
 if __name__ == '__main__':
     main()
