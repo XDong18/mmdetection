@@ -24,7 +24,7 @@ if __name__ == "__main__":
     out_name = 'bdd100k' + '-' + args.code_type + '-' + args.name + '-' + args.para \
         + '-' + digest + '.pth'
 
-    with open(out_name, 'w') as f:
-        with open(args.model_path) as u:
+    with open(out_name, 'wb') as f:
+        with open(args.model_path, 'rb') as u:
             model = u.read()
         f.write(model)
