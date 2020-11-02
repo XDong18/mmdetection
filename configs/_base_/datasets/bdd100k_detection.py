@@ -44,6 +44,6 @@ data = dict(
     test=dict(
         type=dataset_type,
         ann_file=data_root + 'labels/bdd100k_labels_images_det_coco_val.json',
-        img_prefix=data_root + '100k/val/',
+        img_prefix=data_root + '100k/test/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1, metric='bbox')
