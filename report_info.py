@@ -14,7 +14,7 @@ def get_parser():
 
 def transform(annFile):
     # transform to bdd format
-    coco = COCO(annFile + '_coco.json')
+    coco = COCO(annFile)
     imgIds = coco.getImgIds()
     imgIds = sorted(imgIds)
     catsIds = coco.getCatIds()
