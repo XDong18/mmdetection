@@ -51,6 +51,7 @@ def transform(annFile):
 
 if __name__ == "__main__":
     args = get_parser()
+    print(args.out_name)
     out_dir = 'report_dir'
     temp_dir = 'temp_dir'
     os.makedirs(out_dir, exist_ok=True)
