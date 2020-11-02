@@ -21,8 +21,8 @@ if __name__ == "__main__":
             sha256.update(buffer)
     
     digest = sha256.hexdigest()[:8]
-    out_name = 'bdd100k' + '-' + args.code_type + '-' + args.name + '-' args.para \
-        + '-' digest + '.pth'
-        
+    out_name = 'bdd100k' + '-' + args.code_type + '-' + args.name + '-' + args.para \
+        + '-' + digest + '.pth'
+
     with open(out_name, 'w') as f:
         f.write()
