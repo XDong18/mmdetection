@@ -33,7 +33,6 @@ def transform(annFile):
         anns = coco.loadAnns(annIds)
         det_dict = {}
         det_dict["name"] = img["file_name"]
-        det_dict["url"] = img["coco_url"]
         det_dict["attributes"] = {"weather": "undefined",
                                   "scene": "undefined",
                                   "timeofday": "undefined"}
