@@ -58,6 +58,7 @@ if __name__ == "__main__":
     os.makedirs(temp_dir, exist_ok=True)
 
     # A: model .pth file
+    print('A')
     sha256 = hashlib.sha256()
     with open(args.model_path, 'rb') as u:
         while True:
@@ -76,6 +77,7 @@ if __name__ == "__main__":
         f.write(model)
     
     # B: test result .json file
+    print('B')
     test_json_name = 'bdd100k' + '-' + args.out_name + '-' + 'results' + '.json'
     test_json_name = os.path.join(out_dir, test_json_name)
     command = 'PORT=29503 ./tools/dist_test.sh '
@@ -116,6 +118,7 @@ if __name__ == "__main__":
         json.dump(bdd_label, outfile)
 
     # C: save eval .json file
+    print('C')
     eval_json_name = 'bdd100k' + '-' + args.out_name + '-' + 'eval' + '.json'
     eval_json_name = os.path.join(out_dir, eval_json_name)
     command = 'PORT=29503 ./tools/dist_test.sh '
