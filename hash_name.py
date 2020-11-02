@@ -25,4 +25,6 @@ if __name__ == "__main__":
         + '-' + digest + '.pth'
 
     with open(out_name, 'w') as f:
-        f.write()
+        with open(args.model_path) as u:
+            model = u.read()
+        f.write(model)
