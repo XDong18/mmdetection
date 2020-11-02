@@ -4,7 +4,7 @@ import copy
 
 def get_parser():
     parser = argparse.ArgumentParser(description='aux test json')
-    parser.add_argument('file-name', help='json file name')
+    parser.add_argument('file_name', help='json file name')
     return parser.parse_args()
 
 if __name__ == "__main__":
