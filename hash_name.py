@@ -3,7 +3,7 @@ import hashlib
 
 def get_parse():
     parser = argparse.ArgumentParser(description='generate model name')
-    parser.add_argument('model-path', help='model path')
+    parser.add_argument('model_path', help='model path')
     parser.add_argument('--code-type', help='third party or origin code', default='mmdetection')
     parser.add_argument('--name', help='model name')
     parser.add_argument('--para', help='parameters')
