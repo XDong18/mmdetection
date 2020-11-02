@@ -83,7 +83,7 @@ def parse_args():
     parser.add_argument('--local_rank', type=int, default=0)
     # TODO my own argument
     parser.add_argument('--val_dataset', action='store_true', help='use validation set')
-    parser.add_argument('--result_json', help='path to save eval result', defaut='./eval_result.json')
+    parser.add_argument('--result_json', help='path to save eval result', default='./eval_result.json')
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
