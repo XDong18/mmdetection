@@ -507,6 +507,9 @@ class Bdd100kDataset(CustomDataset):
                             ap = float('nan')
                         results_per_category.append(
                             (f'{nm["name"]}', f'{float(ap):0.3f}'))
+                    
+                    # TODO add classwise_ap to the eval_results dir
+                    eval_results['classwise_AP'] = results_per_category
 
                     num_columns = min(6, len(results_per_category) * 2)
                     results_flatten = list(
@@ -533,9 +536,10 @@ class Bdd100kDataset(CustomDataset):
                     )
                     eval_results[key] = val
                 ap = cocoEval.stats[:6]
-                eval_results[f'{metric}_mAP_copypaste'] = (
-                    f'{ap[0]:.3f} {ap[1]:.3f} {ap[2]:.3f} {ap[3]:.3f} '
-                    f'{ap[4]:.3f} {ap[5]:.3f}')
+                # TODO delete cityscape mAP 
+                # eval_results[f'{metric}_mAP_copypaste'] = (
+                #     f'{ap[0]:.3f} {ap[1]:.3f} {ap[2]:.3f} {ap[3]:.3f} '
+                #     f'{ap[4]:.3f} {ap[5]:.3f}')
         if tmp_dir is not None:
             tmp_dir.cleanup()
         return eval_results

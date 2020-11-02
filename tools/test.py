@@ -1,6 +1,7 @@
 import argparse
 import os
 import warnings
+import json
 
 import mmcv
 import torch
@@ -80,6 +81,9 @@ def parse_args():
         default='none',
         help='job launcher')
     parser.add_argument('--local_rank', type=int, default=0)
+    # TODO my own argument
+    parser.add_argument('--val_dataset', action='store_true', help='use validation set')
+    parser.add_argument('--result_json', help='path to save eval result', defaut='./eval_result.json')
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
@@ -149,7 +153,11 @@ def main():
     if samples_per_gpu > 1:
         # Replace 'ImageToTensor' to 'DefaultFormatBundle'
         cfg.data.test.pipeline = replace_ImageToTensor(cfg.data.test.pipeline)
-    dataset = build_dataset(cfg.data.test)
+    if args.val_dataset:
+        dataset = build_dataset(cfg.data.val)
+    else:
+        dataset = build_dataset(cfg.data.test)
+
     data_loader = build_dataloader(
         dataset,
         samples_per_gpu=samples_per_gpu,
@@ -199,7 +207,9 @@ def main():
                 eval_kwargs.pop(key, None)
             eval_kwargs.update(dict(metric=args.eval, **kwargs))
             print(dataset.evaluate(outputs, **eval_kwargs))
-
+            # TODO save result json
+            with open(args.result_json, 'w') as u:
+                json.dump(dataset.evaluate(outputs, **eval_kwargs), u)
 
 if __name__ == '__main__':
     main()
