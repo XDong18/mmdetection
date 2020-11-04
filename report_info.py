@@ -108,7 +108,8 @@ if __name__ == "__main__":
     #     anno['score'] = instance['score']
     #     new_result_data['annotations'].append(anno)
     
-    coco_temp_result_file = os.path.join(temp_dir, args.out_name + '_coco.json')
+    # coco_temp_result_file = os.path.join(temp_dir, args.out_name + '_coco.json')
+    coco_temp_result_file = 'faster_rcnn_r50_fpn_1x_results_coco.json'
     # with open(coco_temp_result_file, 'w') as f:
     #     json.dump(new_result_data, f)
     
