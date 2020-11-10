@@ -91,22 +91,22 @@ if __name__ == "__main__":
     # os.system(command)
 
     # # convert temp result to coco format
-    # with open(temp_result_file + '.bbox.json') as f:
-    #     temp_result_data = json.load(f)
+    with open(temp_result_file + '.bbox.json') as f:
+        temp_result_data = json.load(f)
     
-    # with open('/shared/xudongliu/bdd100k/labels/bdd100k_labels_images_det_coco_test.json') as f:
-    #     new_result_data = json.load(f)
+    with open('/shared/xudongliu/bdd100k/labels/bdd100k_labels_images_det_coco_test.json') as f:
+        new_result_data = json.load(f)
     
-    # new_result_data['annotations'] = []
-    # for i, instance in enumerate(temp_result_data):
-    #     anno = {}
-    #     anno['id'] = i + 1
-    #     anno['image_id'] = instance['image_id']
-    #     anno['category_id'] = instance['category_id']
-    #     anno['bbox'] = instance['bbox']
-    #     anno['area'] = float(instance['bbox'][2] * instance['bbox'][3])
-    #     anno['score'] = instance['score']
-    #     new_result_data['annotations'].append(anno)
+    new_result_data['annotations'] = []
+    for i, instance in enumerate(temp_result_data):
+        anno = {}
+        anno['id'] = i + 1
+        anno['image_id'] = instance['image_id']
+        anno['category_id'] = instance['category_id']
+        anno['bbox'] = instance['bbox']
+        anno['area'] = float(instance['bbox'][2] * instance['bbox'][3])
+        anno['score'] = instance['score']
+        new_result_data['annotations'].append(anno)
     
     # coco_temp_result_file = os.path.join(temp_dir, args.out_name + '_coco.json')
     coco_temp_result_file = 'faster_rcnn_r50_fpn_1x_results_coco.json'
