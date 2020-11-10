@@ -14,6 +14,6 @@ model = dict(
 
 # data loader
 data = dict(
-    samples_per_gpu=4, # TODO samples pre gpu
+    samples_per_gpu=2, # TODO samples pre gpu
     workers_per_gpu=2,
 )
