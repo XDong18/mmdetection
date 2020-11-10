@@ -59,22 +59,22 @@ if __name__ == "__main__":
 
     # A: model .pth file
     # print('A')
-    # sha256 = hashlib.sha256()
-    # with open(args.model_path, 'rb') as u:
-    #     while True:
-    #         buffer = u.read(8192)
-    #         if len(buffer) == 0:
-    #             break
-    #         sha256.update(buffer)
+    sha256 = hashlib.sha256()
+    with open(args.model_path, 'rb') as u:
+        while True:
+            buffer = u.read(8192)
+            if len(buffer) == 0:
+                break
+            sha256.update(buffer)
     
-    # digest = sha256.hexdigest()[:8]
-    # model_out_name = 'bdd100k' + '-' + args.out_name + '-' + digest + '.pth'
-    # model_out_name = os.path.join(out_dir, model_out_name)
+    digest = sha256.hexdigest()[:8]
+    model_out_name = 'bdd100k' + '-' + args.out_name + '-' + digest + '.pth'
+    model_out_name = os.path.join(out_dir, model_out_name)
 
-    # with open(model_out_name, 'wb') as f:
-    #     with open(args.model_path, 'rb') as u:
-    #         model = u.read()
-    #     f.write(model)
+    with open(model_out_name, 'wb') as f:
+        with open(args.model_path, 'rb') as u:
+            model = u.read()
+        f.write(model)
     
     # B: test result .json file
     print('B')
