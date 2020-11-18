@@ -58,7 +58,7 @@ if __name__ == "__main__":
     os.makedirs(temp_dir, exist_ok=True)
 
     # A: model .pth file
-    # print('A')
+    print('A')
     sha256 = hashlib.sha256()
     with open(args.model_path, 'rb') as u:
         while True:
@@ -81,14 +81,14 @@ if __name__ == "__main__":
     test_json_name = 'bdd100k' + '-' + args.out_name + '-' + 'results' + '.json'
     test_json_name = os.path.join(out_dir, test_json_name)
     # command = 'PORT=29503 ./tools/dist_test.sh '
-    # command += args.config + ' '
-    # command += args.model_path + ' '
-    # command += '2 '
-    # command += '--format-only '
+    command += args.config + ' '
+    command += args.model_path + ' '
+    command += '2 '
+    command += '--format-only '
 
-    # temp_result_file = os.path.join(temp_dir, args.out_name)
-    # command += '--eval-options ' + '"jsonfile_prefix=' + temp_result_file + '" '
-    # os.system(command)
+    temp_result_file = os.path.join(temp_dir, args.out_name)
+    command += '--eval-options ' + '"jsonfile_prefix=' + temp_result_file + '" '
+    os.system(command)
 
     # # convert temp result to coco format
     with open(temp_result_file + '.bbox.json') as f:
@@ -109,7 +109,7 @@ if __name__ == "__main__":
         new_result_data['annotations'].append(anno)
     
     coco_temp_result_file = os.path.join(temp_dir, args.out_name + '_coco.json')
-    coco_temp_result_file = 'faster_rcnn_r50_fpn_1x_results_coco.json'
+    # coco_temp_result_file = 'faster_rcnn_r50_fpn_1x_results_coco.json'
     with open(coco_temp_result_file, 'w') as f:
         json.dump(new_result_data, f)
     
@@ -119,17 +119,17 @@ if __name__ == "__main__":
         json.dump(bdd_label, outfile)
 
     # C: save eval .json file
-    # print('C')
+    print('C')
     eval_json_name = 'bdd100k' + '-' + args.out_name + '-' + 'eval' + '.json'
     eval_json_name = os.path.join(out_dir, eval_json_name)
-    # command = 'PORT=29503 ./tools/dist_test.sh '
-    # command += args.config + ' '
-    # command += args.model_path + ' '
-    # command += '2 '
-    # command += '--val_dataset '
-    # command += '--eval bbox --eval-options "classwise=True" '
-    # command += '--result_json ' + eval_json_name
-    # os.system(command)
+    command = 'PORT=29503 ./tools/dist_test.sh '
+    command += args.config + ' '
+    command += args.model_path + ' '
+    command += '2 '
+    command += '--val_dataset '
+    command += '--eval bbox --eval-options "classwise=True" '
+    command += '--result_json ' + eval_json_name
+    os.system(command)
 
 
     
