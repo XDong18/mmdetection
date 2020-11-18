@@ -120,8 +120,8 @@ if __name__ == "__main__":
 
     # C: save eval .json file
     # print('C')
-    # eval_json_name = 'bdd100k' + '-' + args.out_name + '-' + 'eval' + '.json'
-    # eval_json_name = os.path.join(out_dir, eval_json_name)
+    eval_json_name = 'bdd100k' + '-' + args.out_name + '-' + 'eval' + '.json'
+    eval_json_name = os.path.join(out_dir, eval_json_name)
     # command = 'PORT=29503 ./tools/dist_test.sh '
     # command += args.config + ' '
     # command += args.model_path + ' '

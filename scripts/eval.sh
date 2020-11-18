@@ -1,3 +1,3 @@
-export CUDA_VISIBLE_DEVICES=4,9
+export CUDA_VISIBLE_DEVICES=8,9
 
-PORT=29502 ./tools/dist_test.sh configs/cascade_rcnn/cascade_rcnn_r50_fpn_1x_bdd100k.py a_out/cascade_rcnn_r50_fpn_1x/cascade_rcnn_r50_fpn_1x-b915cc22.pth 2 --eval bbox --eval-options "classwise=True"
+PORT=29502 ./tools/dist_test.sh configs/cornernet/cornernet_hourglass104_mstest_4x6_210e_bdd100k.py out/cornernet_hourglass104_mstest_4x6_210e/latest.pth 2 --eval bbox --val_dataset --eval-options "classwise=True"
