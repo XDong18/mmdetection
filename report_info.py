@@ -83,7 +83,7 @@ if __name__ == "__main__":
     command = 'PORT=29503 ./tools/dist_test.sh '
     command += args.config + ' '
     command += args.model_path + ' '
-    command += '2 '
+    command += '4 '
     command += '--format-only '
 
     temp_result_file = os.path.join(temp_dir, args.out_name)
