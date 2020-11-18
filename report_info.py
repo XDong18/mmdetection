@@ -125,7 +125,7 @@ if __name__ == "__main__":
     command = 'PORT=29503 ./tools/dist_test.sh '
     command += args.config + ' '
     command += args.model_path + ' '
-    command += '2 '
+    command += '4 '
     command += '--val_dataset '
     command += '--eval bbox --eval-options "classwise=True" '
     command += '--result_json ' + eval_json_name
