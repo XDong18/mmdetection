@@ -80,7 +80,7 @@ if __name__ == "__main__":
     print('B')
     test_json_name = 'bdd100k' + '-' + args.out_name + '-' + 'results' + '.json'
     test_json_name = os.path.join(out_dir, test_json_name)
-    # command = 'PORT=29503 ./tools/dist_test.sh '
+    command = 'PORT=29503 ./tools/dist_test.sh '
     command += args.config + ' '
     command += args.model_path + ' '
     command += '2 '
