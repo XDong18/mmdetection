@@ -1,2 +1,2 @@
-export CUDA_VISIBLE_DEVICES=0,1,2,3
-PORT=29503 ./tools/dist_train.sh configs/pafpn/faster_rcnn_r101_pafpn_1x_bdd100k.py 4 --work-dir out/faster_rcnn_r101_pafpn_1x
+export CUDA_VISIBLE_DEVICES=2,3
+PORT=29503 ./tools/dist_train.sh configs/yolact/yolact_r50_1x8_bdd100k.py 2 --work-dir out/yolact_r50_1x8_bdd100k
