@@ -107,7 +107,7 @@ train_pipeline = [
         min_crop_size=0.3),
     dict(type='Resize', img_scale=[(1422, 800), (1479, 832), (1536, 864), (1593, 896), 
         (1650, 928), (1707, 960), (1764, 992), (1821, 1024), (1821, 1024)], 
-        keep_ratio=False, mode='value'),
+        keep_ratio=True, multiscale_mode='value'),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='RandomFlip', flip_ratio=0.5),
     dict(type='DefaultFormatBundle'),
@@ -120,7 +120,7 @@ test_pipeline = [
         img_scale=(2048, 1152),
         flip=False,
         transforms=[
-            dict(type='Resize', keep_ratio=False),
+            dict(type='Resize', keep_ratio=True),
             dict(type='Normalize', **img_norm_cfg),
             dict(type='ImageToTensor', keys=['img']),
             dict(type='Collect', keys=['img']),
