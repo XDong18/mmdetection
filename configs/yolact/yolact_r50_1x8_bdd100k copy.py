@@ -1,7 +1,7 @@
 _base_ = '../_base_/default_runtime.py'
 
 # model settings
-# img_size = 550
+img_size = 550
 model = dict(
     type='YOLACT',
     pretrained='torchvision://resnet50',
@@ -107,7 +107,7 @@ train_pipeline = [
         type='MinIoURandomCrop',
         min_ious=(0.1, 0.3, 0.5, 0.7, 0.9),
         min_crop_size=0.3),
-    dict(type='Resize', img_scale=(1280, 720), keep_ratio=False),
+    dict(type='Resize', img_scale=(img_size, img_size), keep_ratio=False),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='RandomFlip', flip_ratio=0.5),
     dict(type='DefaultFormatBundle'),
@@ -117,7 +117,7 @@ test_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(
         type='MultiScaleFlipAug',
-        img_scale=(1280, 720),
+        img_scale=(img_size, img_size),
         flip=False,
         transforms=[
             dict(type='Resize', keep_ratio=False),
