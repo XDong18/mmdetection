@@ -21,7 +21,7 @@ Create a new file `mmdet/models/backbones/mobilenet.py`.
 ```python
 import torch.nn as nn
 
-from ..registry import BACKBONES
+from ..builder import BACKBONES
 
 
 @BACKBONES.register_module()
@@ -74,9 +74,9 @@ model = dict(
 Create a new file `mmdet/models/necks/pafpn.py`.
 
 ```python
-from ..registry import NECKS
+from ..builder import NECKS
 
-@NECKS.register
+@NECKS.register_module()
 class PAFPN(nn.Module):
 
     def __init__(self,
@@ -105,7 +105,7 @@ or alternatively add
 
 ```python
 custom_imports = dict(
-    imports=['mmdet.models.necks.mobilenet'],
+    imports=['mmdet.models.necks.pafpn.py'],
     allow_failed_imports=False)
 ```
 
@@ -125,11 +125,14 @@ neck=dict(
 
 Here we show how to develop a new head with the example of [Double Head R-CNN](https://arxiv.org/abs/1904.06493) as the following.
 
-First, add a new bbox head in `mmdet/models/bbox_heads/double_bbox_head.py`.
+First, add a new bbox head in `mmdet/models/roi_heads/bbox_heads/double_bbox_head.py`.
 Double Head R-CNN implements a new bbox head for object detection.
 To implement a bbox head, basically we need to implement three functions of the new module as the following.
 
 ```python
+from mmdet.models.builder import HEADS
+from .bbox_head import BBoxHead
+
 @HEADS.register_module()
 class DoubleConvFCBBoxHead(BBoxHead):
     r"""Bbox head used in Double-Head R-CNN
