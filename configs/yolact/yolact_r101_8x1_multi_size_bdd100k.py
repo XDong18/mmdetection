@@ -132,17 +132,17 @@ data = dict(
     train=dict(
         type=dataset_type,
         ann_file='/shared/xudongliu/bdd100k/labels/ins_seg/ins_seg_train.json',
-        img_prefix="/data5/bdd100k/images/10k/train/",
+        img_prefix="/shared/xudongliu/bdd100k/10k/train/",
         pipeline=train_pipeline),
     val=dict(
         type=dataset_type,
         ann_file='/shared/xudongliu/bdd100k/labels/ins_seg/ins_seg_val.json',
-        img_prefix="/data5/bdd100k/images/10k/val/",
+        img_prefix="/shared/xudongliu/bdd100k/10k/val/",
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
         ann_file='/shared/xudongliu/bdd100k/labels/ins_seg/ins_seg_val.json',
-        img_prefix="/data5/bdd100k/images/10k/val/",
+        img_prefix="/shared/xudongliu/bdd100k/10k/val/",
         pipeline=test_pipeline))
 # optimizer
 optimizer = dict(type='SGD', lr=1e-3, momentum=0.9, weight_decay=5e-4)
