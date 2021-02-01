@@ -7,9 +7,9 @@ total_epochs = 12
 optimizer = dict(lr=0.005)
 model = dict(
     pretrained='torchvision://resnet101',
+    neck=dict(norm_cfg=norm_cfg),
+    bbox_head=dict(norm_cfg=norm_cfg),
     backbone=dict(
-        neck=dict(norm_cfg=norm_cfg),
-        bbox_head=dict(norm_cfg=norm_cfg),
         depth=101,
         dcn=dict(type='DCN', deform_groups=1, fallback_on_stride=False),
         stage_with_dcn=(False, True, True, True)))
